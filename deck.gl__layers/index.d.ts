@@ -506,9 +506,9 @@ declare module '@deck.gl/layers/path-layer/path-layer' {
         miterLimit?: number;
         dashJustified?: boolean;
         getPath?: (d: D) => LayerPath;
-        getColor?: (d: D) => RGBAColor | RGBAColor;
-        getWidth?: (path: LayerPath) => number | number;
-        getDashArray?: (path: LayerPath) => [number, number] | [number, number];
+        getColor?: ((d: D) => RGBAColor) | RGBAColor;
+        getWidth?: ((path: LayerPath) => number) | number;
+        getDashArray?: ((path: LayerPath) => [number, number]) | [number, number];
     }
 	export default class PathLayer<D> extends Layer<D> {
     	constructor(props: PathLayerProps<D>);
